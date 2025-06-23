@@ -20,7 +20,7 @@ Il sistema è pensato per essere agnostico rispetto ai modelli sottostanti, rend
 
 ## Installazione e Setup
 
-Per avviare il progetto in un ambiente di sviluppo locale, segui questi passaggi.
+Per avviare il progetto in un ambiente di sviluppo locale, seguire questi passaggi.
 
 ### Prerequisiti
 
@@ -31,11 +31,11 @@ Per avviare il progetto in un ambiente di sviluppo locale, segui questi passaggi
 
 ### Guida all'Installazione
 
-1.  **Clona il repository:**
+1.  **Clonare il repository:**
 
     ```bash
-    git clone [https://github.com/TUO_USERNAME/NOME_REPOSITORY.git](https://github.com/TUO_USERNAME/NOME_REPOSITORY.git)
-    cd NOME_REPOSITORY
+    git clone [https://github.com/carlomarcon/api-data-manager.git](https://github.com/carlomarcon/api-data-manager.git)
+    cd api-data-manager
     ```
 
 2.  **Installa le dipendenze di PHP:**
@@ -50,23 +50,23 @@ Per avviare il progetto in un ambiente di sviluppo locale, segui questi passaggi
     cp .env.example .env
     ```
 
-4.  **Genera la chiave dell'applicazione:**
+4.  **Generare la chiave dell'applicazione:**
 
     ```bash
     php artisan key:generate
     ```
 
 5.  **Configura il Database:**
-    Apri il file `.env` e inserisci le credenziali corrette per il tuo database locale (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
+    Apri il file `.env` e inserisci le credenziali corrette per il database locale (`DB_DATABASE`, `DB_USERNAME`, `DB_PASSWORD`).
+    Ho utilizzato SQLite per questo progetto per semplicità.
 
-6.  **Esegui le Migrations:**
-    Questo comando creerà tutte le tabelle necessarie nel database, incluse quelle per Sanctum.
+6.  **Eseguire le Migrations:**
 
     ```bash
     php artisan migrate
     ```
 
-7.  **Avvia il server di sviluppo:**
+7.  **Avviare il server di sviluppo:**
     ```bash
     php artisan serve
     ```
@@ -80,7 +80,7 @@ Tutte le richieste agli endpoint protetti devono includere i seguenti header:
 
 - `Accept`: `application/json`
 - `Authorization`: `Bearer TUO_TOKEN_API`
-- IMPORTANTE nell'header mettere nel token bearer _token_, importante lo spazio prima del token
+- IMPORTANTE nell'header mettere bearer/spazio/token, importante lo spazio prima del token
 
 ### Autenticazione
 
@@ -96,3 +96,7 @@ Autentica un utente e restituisce un token API.
   "password": "password"
 }
 ```
+
+#####
+
+Tutte le altre rotte visibili in routes effettuano le azioni di insert, update e multiple update
